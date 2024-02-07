@@ -1,3 +1,4 @@
+carreras=[]
 def Crearcarrera (carreras):
      print("Ingrese carrera")
      nombre = input("Nombre : ")
@@ -11,13 +12,46 @@ def Leercarrera (carreras):
      print("- Nombre :" + carrera["carrera"])
  
 def actualizarcarrera (carreras):
- carreraactualizar = input("Ingrese el nombre de la carrera")
- nuevonombre=input("Ingrese el nuevo nombre de la carrera")
- for carrera in carreras:
-    if carrera["carrera"] == carreraactualizar:
-        carrera["carrera"] = nuevonombre
-        print("Carrera actualizada")
-        
+ carreraActualizar = input("Ingrese nombre de la carrera : ")
+ print("1.ACTUALIZAR NOMBRE DE LA CARRERA ")
+ print("2.AGREGAR CLASE  DE LA CARRERA")
+ print("3.ELIMINAR CLASE DE LA CARRERA")
+ print("4.ACTUALIZAR CLASE DE LA CARRERA")
+ print("----------------------------------")
+ opcion2 = int(input("ingrese su opcion :"))
+ if opcion2==1:
+         nuevoValor = input("Ingrese nuevo nombre de la carrera : ")
+         for carrera in carreras:
+             if carrera["carrera"] == carreraActualizar:
+                 carrera["carrera"] = nuevoValor
+                 print("carrera actualizada ")
+                 print("----------------------------------")
+ elif opcion2==2:  
+         nombreclase=input("Ingrese la clase para la carrera : ")
+         for carrera in carreras:
+           if "clase" not in carrera:
+             carrera["clase"]=[nombreclase]
+           else:
+             carrera["clase"].append(nombreclase)
+             print("se agrego la clase correctamente ")
+             print("----------------------------------")
+ elif opcion2==3:
+            borrarclase=input("Ingrese la clase que desea borrar :")
+            for carrera in carreras:
+                if carrera["carrera"] == carreraActualizar and "clase" in carrera:
+                    if borrarclase in carrera["clase"] :
+                     carrera["clase"].remove(borrarclase)
+                     print("la clase se elimino")
+                     print("----------------------------------")
+ elif opcion2==4:
+            actualizarclase=input("Ingrese la clase que desea actualizar")
+            nombrenuevoclase=input("Ingrese el nuevo nombre de la clase ")
+            for carrera in carreras:
+                if carrera["carrera"] == carreraActualizar and "clase" in carrera:
+                    if actualizarclase in carrera["clase"]:
+                     carrera["clase"]=[nombrenuevoclase]
+                     
+                
 def borrarcarrera (carreras):
     carreraborrar=input("Ingrese el nombre de la carrera")
     encontrada = False
@@ -31,7 +65,6 @@ def borrarcarrera (carreras):
          print("no existe")
          
 def MENU():
-    carreras=[]
     seguir = True
     
     while seguir:

@@ -1,2 +1,2 @@
-print("hola gente de el cielo")
+print("hola gente de el ")
 

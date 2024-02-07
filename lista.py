@@ -28,8 +28,7 @@ while seguir:
     elif opcion == 2:
         print("Leer (mostrar) carreras")
         for carrera in carreras:
-         print("- Nombre :" + carrera["carrera"])
-         print("-----------------------------------")
+            print("- Nombre :" + carrera["carrera"])
     elif opcion == 3:
         carreraActualizar = input("Ingrese nombre de la carrera : ")
         print("1.ACTUALIZAR NOMBRE DE LA CARRERA ")
@@ -69,10 +68,7 @@ while seguir:
                 if carrera["carrera"] == carreraActualizar and "clase" in carrera:
                     if actualizarclase in carrera["clase"]:
                      carrera["clase"]=[nombrenuevoclase]
-                    else:
-                     carrera["clase"].append(nombrenuevoclase)
-                    print("se actualizo la clase correctamente ")
-                    print("----------------------------------")
+                     
     elif opcion == 4:
         carreraBorrar = input("Ingrese nombre de la carrera : ")
         indice = 0
